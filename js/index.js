@@ -4,7 +4,7 @@ let menu = document.querySelector('.menu');
 
 
 
-menuButton.addEventListener('click', () => {
+menuButton.addEventListener('pointerdown', () => {
     let header = document.querySelector('.menu').parentNode;
     let menu = document.querySelector('.menu');
 
