@@ -63,7 +63,6 @@ body {
 // Header
 
 .header {
-    background: $accent;
 
     &__inner {
         display: flex;
@@ -89,6 +88,7 @@ body {
     &__text {
         color: #fff;
         text-decoration: none;
+        font-size: 22px;
     }
 
     @media (min-width: 768px) {
@@ -188,8 +188,20 @@ body {
     }
 }
 
+@media (min-width: 1200px) {
+    .menu {
+        flex-basis: 45%;
+    }
+}
+
+
 .specialBtn {
     display: none;
+
+    &__contact:hover {
+        background-color: #5a7acccf;
+        transform: scale(1.2);
+    }
 }
 
 @media (min-width: 768px) {
@@ -211,38 +223,52 @@ body {
 // Home Block
 
 .home-block {
-    box-shadow: 10px 46px 100px 130px $accent inset;
+    background: radial-gradient(50% 50% at 50% 50%, #5975FF 0%, #3029D9 100%);
 
     &__inner {
         display: flex;
+        min-height: 400px;
     }
 
     &__wrapper {
-
         min-height: 312px;
         display: flex;
         flex-direction: column;
         align-items: center;
         align-content: center;
-        justify-content: space-evenly;
+        justify-content: center;
         text-align: center;
         color: #fff;
+        padding: 0 16px;
     }
 
     &__title {
         display: block;
-        font-size: 40px;
-        line-height: 112%;
+        font-size: 48px;
+        line-height: 54px;
+        margin-bottom: 8px;
 
     }
 
     &__text {
+        font-size: 12px;
+        line-height: 24px;
         width: 91%;
+        margin-bottom: 8px;
     }
 
     @media (min-width: 670px) {
+        &__title {
+            margin-bottom: 20px;
+            font-size: 52px;
+            line-height: 58px;
+        }
+
         &__text {
+            font-size: 14px;
+            line-height: 26px;
             width: 70%;
+            margin-bottom: 20px;
         }
     }
 
@@ -252,27 +278,65 @@ body {
 
         &:hover {
             background-color: rgb(106, 0, 255);
-            border: 1px solid #fff;
         }
     }
 
     &__image {
         display: none;
-
+        flex-basis: 60%;
+        height: 100%;
     }
 
     @media (min-width: 768px) {
-        &__image {
-            display: block;
-            z-index: 1;
+        &__inner {
+            background: url('/img/home-img.png') 100% calc(100% + 24px) / contain no-repeat;
+
         }
 
         &__wrapper {
-            flex-basis: 40%;
+            flex-basis: 50%;
             align-items: flex-start;
             text-align: left;
-            line-height: 28px;
+        }
+
+        &__title {
+            font-size: 44px;
+            line-height: 48px;
+            margin-bottom: 30px;
+        }
+
+        &__text {
+            margin-bottom: 30px;
+        }
+
+        &__btn {
+            margin-bottom: 15px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        &__inner {
+            min-height: 500px;
+        }
+
+        &__title {
+            font-size: 54px;
+            line-height: 58px;
+        }
+
+        &__text {
             font-size: 14px;
+        }
+
+        &__btn {
+            padding: 8px 51px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__inner {
+            min-height: 600px;
+            background-position-x: 70%;
         }
 
         &__title {
@@ -280,8 +344,8 @@ body {
             line-height: 98px;
         }
 
-        &__image {
-            flex-basis: 60%;
+        &__wrapper {
+            flex-basis: 35%;
         }
     }
 }
