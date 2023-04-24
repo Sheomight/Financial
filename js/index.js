@@ -38,3 +38,29 @@ video.addEventListener('ended', videoHandler, false);
 function videoHandler() {
     videoBtn.classList.remove('video__overlay_hidden');
 }
+
+// Slider
+
+let offset = 0;
+let card = document.querySelector('.card');
+
+let next = document.querySelector('.switchButtons__btn_next');
+let prev = document.querySelector('.switchButtons__btn_prev');
+
+next.addEventListener('pointerdown', () => {
+    offset = offset + 328;
+    if (offset > 656) {
+        offset = 0;
+    }
+
+    card.style.marginLeft = -offset + 'px';
+});
+
+prev.addEventListener('pointerdown', () => {
+    offset = offset - 328;
+    if (offset < 0) {
+        offset = 656;
+    }
+
+    card.style.marginLeft = -offset + 'px';
+});

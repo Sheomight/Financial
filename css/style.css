@@ -804,6 +804,10 @@ body {
   width: 328px;
   overflow: hidden;
 }
+.ourServices .card {
+  -webkit-transition: margin-left 250ms;
+  transition: margin-left 250ms;
+}
 .ourServices .card__inner {
   position: relative;
   padding: 0 20px;
@@ -861,6 +865,8 @@ body {
           transform: rotate(-90deg);
 }
 .ourServices .card__img {
+  width: 70px;
+  height: 70px;
   margin-bottom: 30px;
 }
 .ourServices .card__number {

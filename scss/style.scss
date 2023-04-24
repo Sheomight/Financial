@@ -779,6 +779,7 @@ body {
     }
 
     .card {
+        transition: margin-left 250ms;
 
         &__inner {
             position: relative;
@@ -834,6 +835,8 @@ body {
         }
 
         &__img {
+            width: 70px;
+            height: 70px;
             margin-bottom: 30px;
         }
 
