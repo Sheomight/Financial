@@ -318,7 +318,7 @@ body {
 }
 @media (min-width: 768px) {
   .home-block__inner {
-    background: url("/img/home-img.png") 100% calc(100% + 24px)/contain no-repeat;
+    background: url("../img/home-img.png") 100% calc(100% + 24px)/contain no-repeat;
   }
   .home-block__wrapper {
     -ms-flex-preferred-size: 50%;
@@ -718,7 +718,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: center no-repeat url("/img/icon/play.svg") #fff;
+  background: center no-repeat url("../img/icon/play.svg") #fff;
 }
 .video__overlay::before {
   content: "";
