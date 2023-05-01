@@ -70,6 +70,11 @@ body {
 }
 @media (min-width: 1200px) {
   .container {
+    padding: 0 100px;
+  }
+}
+@media (min-width: 1368px) {
+  .container {
     padding: 0 124px;
   }
 }
@@ -390,14 +395,14 @@ body {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
-  background-color: #fff;
+  background-color: rgb(244, 244, 244);
 }
 .ourFirm__statisticCards {
   margin-bottom: 80px;
 }
 .ourFirm__video {
   width: 100%;
-  background-color: #fff;
+  background-color: rgb(244, 244, 244);
 }
 @media (min-width: 768px) {
   .ourFirm {
@@ -405,10 +410,10 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    background: #fff;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    background-color: rgb(244, 244, 244);
   }
   .ourFirm__information {
     display: block;
@@ -780,7 +785,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 628px;
 }
 .ourServices__subtitle {
   color: #5975FF;
@@ -803,6 +807,54 @@ body {
           justify-content: space-between;
   width: 328px;
   overflow: hidden;
+}
+@media (min-width: 600px) {
+  .ourServices__title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .ourServices__subtitle {
+    font-size: 18px;
+  }
+  .ourServices__cards {
+    width: 330px;
+  }
+}
+@media (min-width: 768px) {
+  .ourServices__cards {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: visible;
+  }
+}
+@media (min-width: 1200px) {
+  .ourServices__cards {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .ourServices__title {
+    font-size: 48px;
+    line-height: 68px;
+  }
+  .ourServices__subtitle {
+    font-size: 24px;
+    line-height: 68px;
+  }
+}
+@media (min-width: 1368px) {
+  .ourServices__cards {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 .ourServices .card {
   -webkit-transition: margin-left 250ms;
@@ -886,6 +938,52 @@ body {
   opacity: 0.5;
   text-align: center;
 }
+@media (min-width: 600px) {
+  .ourServices .card__inner {
+    width: 330px;
+    height: 350px;
+  }
+  .ourServices .card__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .ourServices .card__text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .ourServices .card {
+    margin-right: 30px;
+  }
+  .ourServices .card__inner {
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .ourServices .card {
+    margin-right: 0;
+  }
+}
+@media (min-width: 1368px) {
+  .ourServices .card__inner {
+    width: 374px;
+    height: 444px;
+    padding: 0 40px;
+  }
+  .ourServices .card__number {
+    font-size: 14px;
+    line-height: 28px;
+  }
+  .ourServices .card__title {
+    font-size: 24px;
+    line-height: 68px;
+  }
+  .ourServices .card__text {
+    font-size: 14px;
+    line-height: 28px;
+  }
+}
 .ourServices__switchBtns {
   width: 250px;
   display: -webkit-box;
@@ -894,6 +992,24 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+@media (min-width: 600px) {
+  .ourServices__switchBtns {
+    width: 350px;
+  }
+}
+@media (min-width: 768px) {
+  .ourServices {
+    background-color: rgb(244, 244, 244);
+  }
+  .ourServices__subtitle {
+    color: #3029D9;
+    font-size: 20px;
+  }
+  .ourServices__title {
+    color: #000;
+    font-size: 38px;
+  }
 }
 
 .switchButtons__btn {
@@ -971,4 +1087,17 @@ body {
   background-color: #000;
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
+}
+@media (min-width: 600px) {
+  .switchButtons__btn {
+    width: 170px;
+  }
+  .switchButtons__next, .switchButtons__prev {
+    width: 70px;
+  }
+}
+@media (min-width: 768px) {
+  .switchButtons {
+    display: none;
+  }
 }

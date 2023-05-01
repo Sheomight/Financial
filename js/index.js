@@ -44,12 +44,14 @@ function videoHandler() {
 let offset = 0;
 let card = document.querySelector('.card');
 
+
 let next = document.querySelector('.switchButtons__btn_next');
 let prev = document.querySelector('.switchButtons__btn_prev');
 
 next.addEventListener('pointerdown', () => {
-    offset = offset + 328;
-    if (offset > 656) {
+    let width = document.querySelector(".ourServices__cards").clientWidth;
+    offset = offset + width;
+    if (offset > width * 2) {
         offset = 0;
     }
 
@@ -57,9 +59,10 @@ next.addEventListener('pointerdown', () => {
 });
 
 prev.addEventListener('pointerdown', () => {
-    offset = offset - 328;
+    let width = document.querySelector(".ourServices__cards").clientWidth;
+    offset = offset - width;
     if (offset < 0) {
-        offset = 656;
+        offset = width * 2;
     }
 
     card.style.marginLeft = -offset + 'px';

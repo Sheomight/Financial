@@ -50,6 +50,12 @@ body {
 
 @media (min-width: 1200px) {
     .container {
+        padding: 0 100px;
+    }
+}
+
+@media (min-width: 1368px) {
+    .container {
         padding: 0 124px;
     }
 }
@@ -376,7 +382,7 @@ body {
 
     &__information {
         order: 3;
-        background-color: #fff;
+        background-color: $notwhite;
     }
 
     &__statisticCards {
@@ -385,15 +391,15 @@ body {
 
     &__video {
         width: 100%;
-        background-color: #fff;
+        background-color: $notwhite;
     }
 
 
 
     @media (min-width: 768px) {
         flex-direction: row;
-        background: #fff;
         justify-content: space-between;
+        background-color: $notwhite;
 
         &__information {
             display: block;
@@ -756,7 +762,7 @@ body {
         align-items: center;
         align-content: center;
         justify-content: center;
-        height: 628px;
+
     }
 
     &__subtitle {
@@ -776,6 +782,54 @@ body {
         justify-content: space-between;
         width: 328px;
         overflow: hidden;
+    }
+
+    @media (min-width: 600px) {
+        &__title {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        &__subtitle {
+            font-size: 18px;
+        }
+
+        &__cards {
+            width: 330px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        &__cards {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            overflow: visible;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__cards {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        &__title {
+            font-size: 48px;
+            line-height: 68px;
+        }
+
+        &__subtitle {
+            font-size: 24px;
+            line-height: 68px;
+        }
+    }
+
+    @media (min-width: 1368px) {
+        &__cards {
+            flex-wrap: nowrap;
+            justify-content: space-around;
+        }
     }
 
     .card {
@@ -859,12 +913,86 @@ body {
             opacity: 0.5;
             text-align: center;
         }
+
+        @media (min-width: 600px) {
+
+            &__inner {
+                width: 330px;
+                height: 350px;
+            }
+
+            &__title {
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            &__text {
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            margin-right: 30px;
+
+            &__inner {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            margin-right: 0;
+        }
+
+        @media (min-width: 1368px) {
+            &__inner {
+                width: 374px;
+                height: 444px;
+                padding: 0 40px;
+            }
+
+            &__img {}
+
+            &__number {
+                font-size: 14px;
+                line-height: 28px;
+            }
+
+            &__title {
+                font-size: 24px;
+                line-height: 68px;
+            }
+
+            &__text {
+                font-size: 14px;
+                line-height: 28px;
+            }
+        }
+
     }
 
     &__switchBtns {
         width: 250px;
         display: flex;
         justify-content: space-between;
+
+        @media (min-width: 600px) {
+            width: 350px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        background-color: $notwhite;
+
+        &__subtitle {
+            color: $accent;
+            font-size: 20px;
+        }
+
+        &__title {
+            color: #000;
+            font-size: 38px;
+        }
     }
 }
 
@@ -941,5 +1069,20 @@ body {
             background-color: #000;
             transform: rotate(135deg);
         }
+    }
+
+    @media (min-width: 600px) {
+        &__btn {
+            width: 170px;
+        }
+
+        &__next,
+        &__prev {
+            width: 70px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        display: none;
     }
 }
