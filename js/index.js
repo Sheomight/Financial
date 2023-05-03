@@ -67,3 +67,15 @@ prev.addEventListener('pointerdown', () => {
 
     card.style.marginLeft = -offset + 'px';
 });
+
+// Feature title
+function setFeatureTitle() {
+    let featureTitle = document.querySelector('.keyFeature').querySelector('.information__title');
+    if (window.innerWidth < 768) {
+        featureTitle.textContent = 'Financial Planning For Safe Investment';
+    } else {
+        featureTitle.textContent = 'Manage Your Finances From one Place';
+    }
+}
+setFeatureTitle();
+window.addEventListener('resize', setFeatureTitle);

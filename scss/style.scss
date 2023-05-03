@@ -71,7 +71,6 @@ body {
     font-family: 'Poppins-SemiBold';
     font-weight: 600;
     font-size: 16px;
-    line-height: 283%;
     margin: 0;
 }
 
@@ -261,7 +260,6 @@ body {
         justify-content: center;
         text-align: center;
         color: #fff;
-        padding: 0 16px;
     }
 
     &__title {
@@ -374,15 +372,19 @@ body {
 
 // Our firm
 .ourFirm {
-    min-height: 700px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    background: linear-gradient(180deg, $accent 37%, $notwhite 37%);
+
+    &__inner {
+        min-height: 500px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
 
     &__information {
         order: 3;
-        background-color: $notwhite;
+        margin-bottom: 40px;
     }
 
     &__statisticCards {
@@ -391,15 +393,24 @@ body {
 
     &__video {
         width: 100%;
-        background-color: $notwhite;
+        // background-color: $notwhite;
     }
 
 
 
     @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: $notwhite;
+
+        background: $notwhite;
+
+        &__inner {
+            flex-direction: row;
+            justify-content: flex-start;
+            min-height: 600px;
+        }
+
+        &__statisticCards {
+            margin-bottom: 0;
+        }
 
         &__information {
             display: block;
@@ -415,7 +426,6 @@ body {
 
 
 .statisticCards {
-    width: 80%;
 
     &__card {
         width: 328px;
@@ -481,18 +491,18 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        align-content: center;
+        align-content: flex-end;
         justify-content: space-between;
         min-height: 500px;
+    }
+
+    @media (min-width: 600px) {
+        width: 80%;
     }
 
     @media (min-width: 768px) {
         flex-basis: 50%;
         order: 2;
-
-        & .container {
-            padding-left: 0;
-        }
 
         &__card {
             width: 48%;
@@ -557,10 +567,6 @@ body {
         &__card {
             max-width: 278px;
         }
-
-        &__inner {
-            margin-bottom: 130px;
-        }
     }
 
 }
@@ -586,6 +592,7 @@ body {
     &__subtitle {
         text-align: center;
         order: -1;
+        margin-bottom: 14px;
     }
 
     &__text {
@@ -594,8 +601,8 @@ body {
         color: #A0ABB8;
         margin: 0 0 24px 0;
 
-        &:last-child {
-            margin: 0;
+        &:last-of-type {
+            margin-bottom: 0;
         }
     }
 
@@ -624,16 +631,16 @@ body {
             align-items: start;
         }
 
-        & .container {
-            padding-right: 0;
-        }
-
         &__title {
             text-align: left;
         }
 
         &__subtitle {
             text-align: left;
+        }
+
+        &__text:last-of-type {
+            margin-bottom: 28px;
         }
 
         &__btn {
@@ -760,14 +767,14 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        align-content: center;
         justify-content: center;
-
+        min-height: 650px;
     }
 
     &__subtitle {
         color: #5975FF;
         order: -1;
+        margin-bottom: 14px;
     }
 
     &__title {
@@ -800,6 +807,10 @@ body {
     }
 
     @media (min-width: 768px) {
+        &__inner {
+            min-height: 800px;
+        }
+
         &__cards {
             width: 100%;
             flex-wrap: wrap;
@@ -828,7 +839,6 @@ body {
     @media (min-width: 1368px) {
         &__cards {
             flex-wrap: nowrap;
-            justify-content: space-around;
         }
     }
 
@@ -1004,6 +1014,7 @@ body {
         width: 109px;
         height: 56px;
         cursor: pointer;
+        margin-bottom: 40px;
     }
 
     &__btn_next {
@@ -1085,4 +1096,121 @@ body {
     @media (min-width: 768px) {
         display: none;
     }
+}
+
+// Key feature
+
+.keyFeature {
+    background-color: $notwhite;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 600px;
+    }
+
+    & .information__inner {
+        justify-content: center;
+    }
+
+    & .information__title {
+        margin-bottom: 0;
+    }
+
+    & .information__subtitle {
+        display: none;
+    }
+
+    & .information__text {
+        display: none;
+    }
+
+    & .information__btn {
+        display: none;
+    }
+
+    &__imgWrapper {
+        position: relative;
+        order: 2;
+    }
+
+    &__img {
+        position: relative;
+        overflow: hidden;
+        width: 100vw;
+        height: 119vw;
+
+
+        & img {
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            width: 100vw;
+            height: 119vw;
+            object-fit: cover;
+        }
+    }
+
+    @media (min-width: 768px) {
+        background: $accent;
+
+        &__inner {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        & .information__title {
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        & .information__subtitle {
+            display: block;
+            color: #5975FF;
+        }
+
+        & .information__text {
+            display: block;
+            color: #B8C6D6;
+
+            &:last-of-type {
+                margin-bottom: 38px;
+            }
+        }
+
+        & .information__btn {
+            display: block;
+            color: #fff;
+            background: #111849;
+            border-radius: 4px;
+            min-width: 170px;
+        }
+
+        &__img {
+            width: 36vw;
+            height: 55vw;
+            border-radius: 200px 0px 300px 300px;
+
+            & img {
+                width: 36vw;
+                height: 60vw;
+
+            }
+        }
+
+        &__imgWrapper::after {
+            content: '';
+            position: absolute;
+            background-image: url('../img/dots.svg');
+            width: 150px;
+            height: 150px;
+            top: 20%;
+            right: -20%;
+        }
+    }
+
+
 }
