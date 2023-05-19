@@ -41,31 +41,36 @@ function videoHandler() {
 
 // Slider
 
-let offset = 0;
-let card = document.querySelector('.card');
+let offset = { value: 0 };
+let card = document.querySelectorAll('.card');
+let len = card.length;
 
-
-let next = document.querySelector('.switchButtons__btn_next');
-let prev = document.querySelector('.switchButtons__btn_prev');
-
-next.addEventListener('pointerdown', () => {
-    let width = document.querySelector(".ourServices__cards").clientWidth;
-    offset = offset + width;
-    if (offset > width * 2) {
-        offset = 0;
+function showNext(card, offset, length) {
+    let width = card.closest('.slider').clientWidth;
+    offset.value = offset.value + width;
+    if (offset.value > width * (length - 1)) {
+        offset.value = 0;
     }
 
-    card.style.marginLeft = -offset + 'px';
+    card.style.marginLeft = -offset.value + 'px';
+}
+
+function showPrev(card, offset, length) {
+    let width = card.closest('.slider').clientWidth;
+    offset.value = offset.value - width;
+    if (offset.value < 0) {
+        offset.value = width * (length - 1);
+    }
+
+    card.style.marginLeft = -offset.value + 'px';
+}
+
+document.querySelector('.switchButtons__btn_next').addEventListener('pointerdown', () => {
+    showNext(card[0], offset, len);
 });
 
-prev.addEventListener('pointerdown', () => {
-    let width = document.querySelector(".ourServices__cards").clientWidth;
-    offset = offset - width;
-    if (offset < 0) {
-        offset = width * 2;
-    }
-
-    card.style.marginLeft = -offset + 'px';
+document.querySelector('.switchButtons__btn_prev').addEventListener('pointerdown', () => {
+    showPrev(card[0], offset, len);
 });
 
 // Feature title
@@ -111,3 +116,16 @@ function showBlogCards(cards) {
 hideBlogCards(blogCards);
 window.addEventListener('resize', () => showBlogCards(blogCards));
 window.addEventListener('resize', () => hideBlogCards(blogCards));
+
+
+// Client card
+let clientOffset = { value: 0 };
+let clientCard = document.querySelectorAll('.clientCard');
+
+document.querySelector('.testimoni__switchBtns').querySelector('.switchButtons__btn_next').addEventListener('pointerdown', () => {
+    showNext(clientCard[0], clientOffset, clientCard.length);
+});
+
+document.querySelector('.testimoni__switchBtns').querySelector('.switchButtons__btn_prev').addEventListener('pointerdown', () => {
+    showPrev(clientCard[0], clientOffset, clientCard.length);
+});

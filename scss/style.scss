@@ -79,6 +79,7 @@ body {
     color: #fff;
     font-size: 14px;
     text-align: center;
+    cursor: pointer;
 
     &:hover {
         background-color: rgb(106, 0, 255);
@@ -109,20 +110,42 @@ body {
         align-items: center;
         margin: 5% 0;
 
-        & img {
-            margin-right: 8px;
+
+    }
+
+    &__img {
+        margin-right: 8px;
+        width: 28px;
+        height: 34px;
+
+        &_footer {
+            width: 43px;
+            height: 53px;
+            margin-right: 18px;
         }
     }
 
     &__text {
         color: #fff;
         text-decoration: none;
-        font-size: 22px;
+        font-size: 14px;
+        font-weight: 700;
+
+        &_footer {
+            color: $darkerAccent;
+            font-size: 22px;
+        }
     }
 
     @media (min-width: 768px) {
         &__text {
+            font-size: 22px;
             margin-right: 15px;
+        }
+
+        &__img {
+            width: 43px;
+            height: 53px;
         }
     }
 }
@@ -995,8 +1018,6 @@ body {
 
     &__switchBtns {
         width: 250px;
-        display: flex;
-        justify-content: space-between;
 
         @media (min-width: 600px) {
             width: 350px;
@@ -1019,6 +1040,9 @@ body {
 }
 
 .switchButtons {
+    display: flex;
+    justify-content: space-between;
+
     &__btn {
         display: flex;
         justify-content: center;
@@ -1026,7 +1050,6 @@ body {
         width: 109px;
         height: 56px;
         cursor: pointer;
-        margin-bottom: 40px;
     }
 
     &__btn_next {
@@ -1199,6 +1222,10 @@ body {
             background: #111849;
             border-radius: 4px;
             min-width: 170px;
+
+            &:hover {
+                background-color: rgb(106, 0, 255);
+            }
         }
 
         &__img {
@@ -1252,13 +1279,15 @@ body {
     &__inner {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         min-height: 840px;
     }
 
     &__news {
         display: flex;
         justify-content: center;
-        width: 100%;
+        width: 335px;
     }
 
     @media (min-width: 768px) {
@@ -1269,19 +1298,39 @@ body {
         }
 
         &__news {
-            width: 75%;
+            width: 100%;
             justify-content: space-between;
+        }
+    }
+
+    @media (min-width: 800px) {
+        &__news {
+            width: 85%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &__news {
+            width: 80%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__news {
+            width: 95%;
         }
     }
 }
 
 .newsCard {
     background: #fff;
+    flex-basis: 30%;
+    max-width: 374px;
 
     &__inner {
         display: flex;
         flex-direction: column;
-        width: 335px;
+        min-width: 325px;
         min-height: 583px;
         box-shadow: 0px 10px 100px 10px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
@@ -1331,9 +1380,9 @@ body {
         display: none;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
         &__inner {
-            width: 374px;
+            max-width: 374px;
         }
     }
 }
@@ -1498,4 +1547,184 @@ body {
             line-height: 34px;
         }
     }
+}
+
+// Testimoni
+
+.testimoni {
+    background: $darkerAccent url('../img/bgArt.png') no-repeat;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        min-height: 700px;
+    }
+
+    & .information__title {
+        color: #fff;
+        margin-bottom: 38px;
+    }
+
+    & .information__subtitle {
+        color: #5975FF;
+        margin-bottom: 26px;
+    }
+
+    &__clients {
+        display: flex;
+        width: 328px;
+        overflow: hidden;
+    }
+
+    &__clientCard {}
+
+    &__switchBtns {
+        min-width: 250px;
+    }
+
+    @media (min-width: 600px) {
+        &__clients {
+            width: 339px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.clientCard {
+    transition: margin-left 250ms;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        width: 329px;
+        margin-bottom: 33px;
+    }
+
+    &__img {
+        width: 188px;
+        height: 188px;
+        overflow: hidden;
+        border-radius: 200px 0px 200px 200px;
+        align-self: center;
+        margin-bottom: 26px;
+
+        & img {
+            width: 188px;
+            height: 188px;
+        }
+    }
+
+
+    &__text {
+        color: #B8C6D6;
+        font-weight: 600;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+
+
+    &__name {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 34px;
+        color: #fff;
+    }
+
+    &__postition {
+        font-weight: 400;
+        line-height: 34px;
+        color: #fff;
+    }
+
+    @media (min-width: 600px) {
+        &__inner {
+            width: 340px;
+        }
+    }
+}
+
+// Contact
+
+.contact {
+    display: none;
+    background: $darkerAccent url('../img/bgArtBig.png') no-repeat;
+    background-size: cover;
+
+    &__inner {
+        min-height: 630px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .information__title {
+        color: #fff;
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+}
+
+// Footer
+
+.footer {
+    background: $notwhite;
+
+    &__inner {
+        min-height: 567px;
+        color: #A0ABB8;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__text {
+        line-height: 24px;
+        width: 70%;
+        margin-bottom: 40px;
+    }
+
+    &__links {
+        height: 120px;
+        display: flex;
+        flex-flow: column wrap;
+        align-content: space-between;
+    }
+
+    &__link {
+        height: 33%;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 15px;
+        color: $darkerAccent;
+    }
+
+    &__social {
+        width: 113px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 28px;
+    }
+
+    &__more {
+        width: 75%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 21px;
+    }
+
+    &__help {
+        color: #A0ABB8;
+    }
+
+    &__copyright {}
 }
