@@ -17,6 +17,19 @@ a:focus {
     text-decoration: none;
 }
 
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
 body {
     min-width: 320px;
     overflow-x: hidden;
@@ -99,7 +112,22 @@ body {
         justify-content: space-between;
         align-items: center;
         min-height: 80px;
+    }
 
+    &__menu {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        &__menu {
+            width: 55%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__menu {
+            flex-basis: 45%;
+        }
     }
 }
 
@@ -109,8 +137,6 @@ body {
         display: flex;
         align-items: center;
         margin: 5% 0;
-
-
     }
 
     &__img {
@@ -128,6 +154,7 @@ body {
     &__text {
         color: #fff;
         text-decoration: none;
+        font-family: 'Poppins-Bold';
         font-size: 14px;
         font-weight: 700;
 
@@ -152,10 +179,16 @@ body {
 
 
 .menu {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        &>li:hover .sub-menu__list {
+            display: flex;
+        }
+    }
 
     &_responsive {
         flex-direction: column;
@@ -174,19 +207,18 @@ body {
     }
 
     &__link {
+        position: relative;
         display: none;
-        font-family: 'Poppins-SemiBold', 'Arial', 'sans-serif';
+        font-family: 'Poppins-SemiBold';
         font-weight: 600;
         font-size: 14px;
-        opacity: 0.8;
-        color: #fff;
+        color: rgba(255, 255, 255, 0.8);
 
         &_active,
         &:hover {
-            position: relative;
-            font-family: 'Poppins-Bold', 'Arial', 'sans-serif';
+            font-family: 'Poppins-Bold';
             font-weight: 700;
-            opacity: 1;
+            color: rgba(255, 255, 255, 1);
 
             &::after {
                 content: "";
@@ -200,9 +232,28 @@ body {
         }
     }
 
-    @media (min-width: 768px) {
-        &__link {
-            display: inline;
+    &__dropdown {
+        position: relative;
+        width: 100px;
+        text-align: center;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        &>a::before {
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 10px;
+            right: -50%;
+            top: 40%;
+            background: url('../img/icon/arrowDown.svg') no-repeat;
+        }
+
+        &:hover a::before {
+            transform: rotate(-90deg);
+            top: 25%;
         }
     }
 
@@ -221,31 +272,39 @@ body {
     }
 
     @media (min-width: 768px) {
+        &__list {
+            justify-content: space-between;
+
+            &:last-of-type {
+                margin-right: 15px;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+        }
+
         &__btn {
             display: none;
         }
     }
-
-
 }
 
-@media (min-width: 768px) {
-    .menu {
-        width: 55%;
-        justify-content: space-between;
+.sub-menu__list {
+    display: none;
+    width: 100px;
+    position: absolute;
+    left: 0%;
+    top: 20px;
+    padding-top: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: center;
 
-        &:last-of-type {
-            margin-right: 15px;
-        }
+    & .menu__link {
+        padding: 5px 10px;
     }
 }
-
-@media (min-width: 1200px) {
-    .menu {
-        flex-basis: 45%;
-    }
-}
-
 
 .specialBtn {
     display: none;
@@ -1294,7 +1353,7 @@ body {
         &__inner {
             align-items: center;
             justify-content: center;
-            min-height: 1000px;
+            min-height: 900px;
         }
 
         &__news {
@@ -1305,7 +1364,7 @@ body {
 
     @media (min-width: 800px) {
         &__news {
-            width: 85%;
+            width: 100%;
         }
     }
 
@@ -1352,12 +1411,14 @@ body {
 
     &__date {
         color: $accent;
+        font-family: 'Poppins-SemiBold';
         font-size: 14px;
         line-height: 28px;
         font-weight: 600;
     }
 
     &__title {
+        font-family: 'Poppins-Bold';
         font-weight: 700;
         font-size: 18px;
         line-height: 34px;
@@ -1397,7 +1458,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 960px;
+        min-height: 750px;
     }
 
     &__cards {
@@ -1491,7 +1552,7 @@ body {
 
     &__text {
         width: 60%;
-
+        font-family: 'Poppins-Bold';
         font-weight: 700;
         color: $darkerAccent;
         text-align: center;
@@ -1623,6 +1684,7 @@ body {
 
     &__text {
         color: #B8C6D6;
+        font-family: 'Poppins-SemiBold';
         font-weight: 600;
         line-height: 24px;
         margin-bottom: 10px;
@@ -1630,6 +1692,7 @@ body {
 
 
     &__name {
+        font-family: 'Poppins-SemiBold';
         font-weight: 600;
         font-size: 14px;
         line-height: 34px;
@@ -1702,10 +1765,16 @@ body {
 
     &__link {
         height: 33%;
+        font-family: 'Poppins-SemiBold';
         font-weight: 600;
         font-size: 10px;
         line-height: 15px;
         color: $darkerAccent;
+
+        &:hover {
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
     }
 
     &__social {
@@ -1720,11 +1789,96 @@ body {
         display: flex;
         justify-content: space-between;
         margin-bottom: 21px;
+
+        & a:hover {
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
     }
 
     &__help {
         color: #A0ABB8;
     }
 
-    &__copyright {}
+
+
+    @media (min-width: 768px) {
+        &__inner {
+            min-height: 389px;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            align-content: center;
+            row-gap: 34px;
+        }
+
+        &__wrap {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 150px;
+        }
+
+        &__text {
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        &__links {
+            width: 45%;
+        }
+
+        &__link {
+            font-size: 12px;
+            line-height: 21px;
+            height: 26%;
+        }
+
+        &__social {
+            width: 15%;
+        }
+
+        &__more {
+            order: 5;
+            width: 40%;
+        }
+
+        &__copyright {
+            order: 4;
+            width: 20%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &__wrap {
+            width: 15%;
+        }
+
+        &__text {
+            width: 100%;
+        }
+
+        &__links {
+            width: 30%;
+        }
+
+        &__link {
+            font-size: 14px;
+            height: 33.33%;
+        }
+
+        &__social {
+            width: 8%;
+        }
+
+        &__more {
+            width: 20%;
+        }
+
+        &__copyright {
+            width: 70%;
+        }
+
+    }
 }
