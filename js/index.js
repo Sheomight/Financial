@@ -1,5 +1,5 @@
 // Menu
-let menuButton = document.querySelector('.menu__btn');
+let menuButton = document.querySelector('.menu__link');
 let menu = document.querySelector('.menu');
 
 menuButton.addEventListener('pointerdown', () => {
